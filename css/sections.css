@@ -1,10 +1,9 @@
-/* css/sections.css */
 
-/* General Section Styling */
+
 main {
-    flex-grow: 1; /* Ensures footer sticks to bottom */
-    padding-top: 32px; /* Space below sticky header, adjusted from 24px */
-    padding-bottom: 48px; /* Space above footer */
+    flex-grow: 1; 
+    padding-top: 32px; 
+    padding-bottom: 48px; 
 }
 
 .hero-section,
@@ -20,11 +19,7 @@ main {
     margin-bottom: 24px;
 }
 
-.section-header .heading2 {
-    /* Typography from typography.css */
-    /* Making section titles slightly smaller than hero card title if needed */
-    /* For now, use global .heading2 */
-}
+
 
 /* Hero Section */
 .hero-grid {
@@ -33,9 +28,7 @@ main {
     gap: 24px; /* Increased gap for visual separation */
 }
 
-.hero-main-news .news-card.large-card {
-    /* Height for the main hero card is determined by its content and aspect ratio of image */
-}
+
 
 .hero-main-news .news-card.large-card img {
    aspect-ratio: 1.77; /* Approx 16:9, adjust to match image */
@@ -49,9 +42,7 @@ main {
     gap: 24px; /* Increased gap */
 }
 
-.hero-secondary-news .news-card.small-card {
-    /* Height is determined by image aspect ratio and content */
-}
+
 
 .hero-secondary-news .news-card.small-card img {
     aspect-ratio: 1; /* Square-ish images in the example */
@@ -66,9 +57,7 @@ main {
     gap: 24px; /* Increased gap */
 }
 
-.most-read-grid .news-card {
-    /* Height is determined by image aspect ratio and content */
-}
+
 
 .most-read-grid .news-card img {
     aspect-ratio: 1.33; /* Approx 4:3, adjust to match image */
@@ -91,91 +80,84 @@ main {
 
 /* AI Article Card - Image left, Text right */
 .ai-article-card {
-    display: flex; /* Override default flex-direction: column from cards.css */
-    flex-direction: row; /* Image left, content right */
-    background-color: var(--stroke-color); /* Ensure bg color if not from common card style */
+    display: flex; 
+    flex-direction: row; 
+    background-color: var(--stroke-color); 
     border-radius: 8px;
     overflow: hidden;
 }
 
 .ai-article-card .ai-article-image-wrapper {
-    flex: 0 0 250px; /* Fixed width for the image container, adjust as needed */
-    /* Or use a percentage: flex: 0 0 40%; */
-    height: auto; /* Or a fixed height if all cards should match */
-    overflow: hidden; /* Ensure image stays within rounded corners if applied */
+    flex: 0 0 250px; 
+    height: auto; 
+    overflow: hidden; 
 }
 
 .ai-article-card img {
     width: 100%;
-    height: 100%; /* Make image fill the wrapper */
+    height: 100%; 
     object-fit: cover;
-    border-radius: 8px 0 0 8px; /* Round top-left and bottom-left corners */
+    border-radius: 8px 0 0 8px; 
 }
 
 .ai-article-card .card-content {
-    flex: 1; /* Text content takes remaining space */
-    padding: 20px; /* Adjust padding for AI article text */
+    flex: 1; 
+    padding: 20px; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center content if desired */
+    justify-content: center; 
 }
 
 .ai-article-card .category-tag {
-    /* Styles from cards.css, ensure correct colors are applied via classes */
     margin-bottom: 10px;
 }
 
 .ai-article-card .heading3 {
-    /* Styles from typography.css */
     margin-bottom: 8px;
 }
 
 .ai-article-card .paragraph {
-    /* Styles from typography.css */
-    font-size: 1.3rem; /* Slightly smaller for these descriptions */
+    font-size: 1.3rem; 
     line-height: 1.5;
 }
 
-/* AI Sidebar */
+
 .ai-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* Gap between title, mini-cards list, and ad banner */
+    gap: 24px; 
 }
 
 .ai-sidebar .sidebar-title {
-    /* heading2 style from typography.css */
-    /* "Viu isso aqui?" */
-    margin-bottom: 0; /* Remove extra margin if section-header has it */
+    margin-bottom: 0; 
     text-align: left;
 }
 
 .mini-cards-list {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Gap between mini-cards as per prompt */
+    gap: 12px; 
 }
 
-/* Ad Banner (in AI Sidebar) */
-
+    
 .ad-banner {
-    position: relative; /* Remains useful if any other minor styling is added directly to the banner image */
+    position: relative; 
     border-radius: 8px;
     overflow: hidden;
-    line-height: 1.3; /* Base line-height, though no text is directly here now */
-    transition: transform 0.3s ease; /* Added for smooth hover effect */
+    line-height: 1.3; 
+    transition: transform 0.3s ease; 
 }
 
 .ad-banner:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
+    transform: scale(1.02); 
 }
 
 .ad-banner img {
     width: 100%;
     display: block;
     object-fit: cover; 
-    max-height: 380px; /* Adjust based on image aspect to prevent too tall banner */
-    border-radius: 8px; /* Ensure image itself is rounded if container is */
+    max-height: 380px; 
+    border-radius: 8px; 
 }
 
 .ad-close-button-simulation {
@@ -185,7 +167,7 @@ main {
     width: 22px;
     height: 22px;
     background-color: rgba(0, 0, 0, 0.6);
-    color: #F1F5F9; /* text-color-primary */
+    color: #F1F5F9; 
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -194,7 +176,7 @@ main {
     font-weight: bold;
     line-height: 1;
     cursor: pointer;
-    z-index: 5; /* Ensure it's on top */
+    z-index: 5; 
     transition: background-color 0.2s ease;
 }
 
@@ -202,8 +184,6 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Removed all styles for .ad-banner-content, .ad-main-title, .ad-banner-footer, .rocketseat-logo-banner, and .ad-banner-content .btn.ad-btn */
 
-/* Rest of sections.css (styles for other sections) */
 
-/* Rest of sections.css (styles for other sections) */ 
+

@@ -1,22 +1,21 @@
-/* css/footer.css */
+
 footer {
     background-color: var(--bg-color);
-    height: 80px; /* As per prompt */
+    height: 80px; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--text-color-secondary);
     border-top: 1px solid var(--stroke-color);
-    margin-top: auto; /* Pushes footer to bottom when body is flex column */
-    width: 100%; /* Ensure footer spans full width */
+    margin-top: auto; 
+    width: 100%; 
 }
 
 footer .container {
-    /* Container class handles max-width and padding */
 }
 
 footer p {
-    font-size: 1.3rem; /* Slightly smaller for footer, consistent with original styles.css */
+    font-size: 1.3rem; 
     line-height: 1.5;
 } 

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
         <div class="container header-container">
             <div class="header-top">
@@ -48,7 +47,6 @@
     </header>
 
     <main>
-        <!-- Seção Hero -->
         <section class="hero-section">
             <div class="container">
                 <div class="hero-grid">
@@ -95,7 +93,6 @@
             </div>
         </section>
 
-        <!-- Seção Mais Lidas -->
         <section class="most-read-section">
             <div class="container">
                 <div class="section-header">
@@ -135,7 +132,6 @@
             </div>
         </section>
 
-        <!-- Seção Destaques IA -->
         <section class="ai-highlights-section">
             <div class="container">
                 <div class="section-header">
@@ -262,7 +258,6 @@
         </section>
     </main>
 
-    <!-- Rodapé -->
     <footer>
         <div class="container">
             <p>&copy; 2025 TECH NEWS. Todos os direitos reservados.</p>
@@ -270,19 +265,18 @@
     </footer>
 
     <script>
-        // Script for mobile menu toggle
         const menuCheckbox = document.getElementById('menu-checkbox');
         const mainNav = document.getElementById('main-nav');
         const menuToggleButton = document.getElementById('menu-toggle-button');
 
-        // Toggle menu with hamburger button in header (for better semantics and accessibility)
+        
         if (menuToggleButton) {
             menuToggleButton.addEventListener('click', () => {
                 menuCheckbox.checked = !menuCheckbox.checked;
             });
         }
         
-        // Ensure clicking on a nav link closes the mobile menu
+        
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {

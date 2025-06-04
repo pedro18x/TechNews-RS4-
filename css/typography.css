@@ -1,60 +1,57 @@
-/* css/typography.css */
 
-/* Archivo font is imported in HTML */
 
-/* Base Text Styles */
+
 body {
-    /* font-family, font-size, line-height are in base.css */
+    
     color: var(--text-color-secondary);
 }
 
-/* Headings */
+
 .heading1 {
-    font-size: 2.4rem; /* As per prompt, TECH NEWS logo size */
+    font-size: 2.4rem; 
     line-height: 135%;
-    font-weight: 700; /* ExtraBold */
-    color: var(--brand-color-light); /* For logo */
+    font-weight: 700; 
+    color: var(--brand-color-light); 
 }
 
 .heading2 {
-    /* For section titles like "Mais lidas da semana", "Destaques de Inteligência Artificial" */
-    /* And card titles like the main hero card */
-    font-size: 2.4rem; /* Matches visual: main hero card title looks larger, similar to H1 */
+
+    font-size: 2.4rem; 
     line-height: 1.3;
     font-weight: 700;
     color: var(--text-color-primary);
 }
 
-/* Adjusted size for heading2 within text overlays */
+
 .card-content-overlay > .heading2 {
-    font-size: 2rem; /* Reduced size for main hero card title on overlay */
+    font-size: 2rem; 
     line-height: 1.25;
 }
 
 .heading3 {
-    /* For smaller card titles (secondary hero, mais lidas, AI articles) */
-    font-size: 1.8rem; /* Adjusted from 1.4rem to match visuals better */
+    
+    font-size: 1.8rem; 
     line-height: 1.4;
     font-weight: 700;
     color: var(--text-color-primary);
 }
 
-/* Adjusted size for heading3 within text overlays */
+
 .card-content-overlay > .heading3 {
-    font-size: 1.5rem; /* Reduced size for secondary/most-read card titles on overlay */
+    font-size: 1.5rem; 
     line-height: 1.3;
 }
 
 .paragraph {
-    font-size: 1.4rem; /* As per prompt */
-    line-height: 1.6; /* 160% */
-    font-weight: 400; /* Regular */
+    font-size: 1.4rem; 
+    line-height: 1.6; 
+    font-weight: 400; 
     color: var(--text-color-secondary);
 }
 
-/* Spans & Category Tags (used as base for nav links too) */
+
 span.category-tag, .main-nav ul li a, .mini-category {
-    font-size: 1.1rem; /* Adjusted for smaller appearance in image */
+    font-size: 1.1rem; 
     line-height: 1.4;
     font-weight: 600;
     text-transform: uppercase;
@@ -65,11 +62,11 @@ span.category-tag, .main-nav ul li a, .mini-category {
 
 .view-all-link {
     color: var(--brand-color-light);
-    font-weight: 600; /* SemiBold */
+    font-weight: 600; 
     font-size: 1.4rem;
     display: flex;
     align-items: center;
-    gap: 8px; /* Increased gap slightly */
+    gap: 8px; 
 }
 
 .view-all-link .arrow-icon {
@@ -86,18 +83,18 @@ span.category-tag, .main-nav ul li a, .mini-category {
     transform: translateX(4px);
 }
 
-/* Buttons */
+    
 .btn {
     display: inline-block;
     padding: 10px 20px;
     font-family: 'Archivo', sans-serif;
-    font-weight: 600; /* SemiBold */
+    font-weight: 600; 
     font-size: 1.4rem;
     background-color: var(--brand-color-light);
-    color: var(--bg-color); /* Text color for button with light bg */
+    color: var(--bg-color); 
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-transform: uppercase; /* Matches "CONHEÇA A ROCKETSEAT" button */
+    text-transform: uppercase; 
     letter-spacing: 0.05em;
 }
 
@@ -106,11 +103,11 @@ span.category-tag, .main-nav ul li a, .mini-category {
     height: 14px;
     margin-left: 8px;
     vertical-align: middle;
-    filter: brightness(0) saturate(100%) invert(12%) sepia(25%) saturate(5310%) hue-rotate(210deg) brightness(92%) contrast(90%); /* To make arrow --bg-color */
+    filter: brightness(0) saturate(100%) invert(12%) sepia(25%) saturate(5310%) hue-rotate(210deg) brightness(92%) contrast(90%); 
 }
 
 .btn.ad-btn .arrow-icon {
-    filter: brightness(0) saturate(100%) invert(15%) sepia(64%) saturate(4786%) hue-rotate(217deg) brightness(90%) contrast(91%); /* To make arrow --brand-color-dark for ad button */
+    filter: brightness(0) saturate(100%) invert(15%) sepia(64%) saturate(4786%) hue-rotate(217deg) brightness(90%) contrast(91%); 
 }
 
 .btn:hover {
@@ -123,5 +120,5 @@ span.category-tag, .main-nav ul li a, .mini-category {
 }
 
 .btn.ad-btn:hover .arrow-icon {
-    filter: brightness(0) saturate(100%) invert(95%) sepia(11%) saturate(162%) hue-rotate(193deg) brightness(113%) contrast(100%); /* To make arrow --text-color-primary for ad button hover */
+    filter: brightness(0) saturate(100%) invert(95%) sepia(11%) saturate(162%) hue-rotate(193deg) brightness(113%) contrast(100%); 
 } 

@@ -1,134 +1,126 @@
-/* css/responsive.css */
 
-/* Tablet (≥ 768px e < 1024px) */
+
+
 @media (min-width: 768px) and (max-width: 1023.98px) {
     .container {
-        padding: 0 24px; /* Slightly more padding for tablet */
+        padding: 0 24px; 
     }
 
-    /* Typography Adjustments for Tablet */
+    
     .heading1 {
         font-size: 2.2rem;
     }
     .heading2 {
-        /* Keep at 2.4rem or adjust if needed, e.g., 2.2rem */
         font-size: 2.2rem; 
     }
     .heading3 {
-        font-size: 1.7rem; /* Keep at 1.8rem or adjust */
+        font-size: 1.7rem; 
     }
 
-    /* Header on Tablet */
+
     .header-top {
-        /* padding: 0; Container padding handles it */
+        
     }
-    /* Horizontal scroll for nav if items overflow */
+            
     .main-nav .nav-links {
         justify-content: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
-        scrollbar-width: none; /* Firefox */
+        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: none; 
     }
-    .main-nav .nav-links::-webkit-scrollbar { /* Chrome, Safari, Opera */
+    .main-nav .nav-links::-webkit-scrollbar { 
         display: none;
     }
     .main-nav .nav-links li a {
-        white-space: nowrap; /* Prevent wrapping of individual nav items */
+        white-space: nowrap; 
     }
 
 
-    /* Hero Section on Tablet */
     .hero-grid {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr; 
         gap: 24px;
     }
     .hero-main-news {
-        margin-bottom: 0; /* Gap handles spacing */
+        margin-bottom: 0; 
     }
     .hero-main-news .news-card.large-card img {
-        height: 350px; /* Adjust height for full width */
+        height: 350px; 
     }
-    .hero-secondary-news { /* Remains 2x2 but full width */
+    .hero-secondary-news { 
         grid-template-columns: 1fr 1fr;
     }
     .hero-secondary-news .news-card.small-card img {
-        height: 160px; /* Adjust if needed */
+        height: 160px; 
     }
 
-    /* Mais Lidas on Tablet */
     .most-read-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
     }
     .most-read-grid .news-card img {
-        height: 200px; /* Adjust height */
+        height: 200px; 
     }
 
-    /* Destaques IA on Tablet */
     .ai-highlights-grid {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr; 
         gap: 24px;
     }
     .ai-articles-column {
-        margin-bottom: 0; /* Gap handles spacing */
+        margin-bottom: 0; 
         gap: 24px;
     }
     .ai-article-card .ai-article-image-wrapper {
-        flex: 0 0 200px; /* Adjust image width for tablet */
+        flex: 0 0 200px; 
     }
     .ai-sidebar {
-        /* Order can be changed here if needed, for now stacks below */
+        
     }
     .ad-banner {
-        margin-top: 0; /* Gap from .ai-sidebar handles it */
+        margin-top: 0; 
     }
 }
 
-/* Mobile (< 768px) */
+
 @media (max-width: 767.98px) {
     .container {
         padding: 0 16px;
     }
 
-    /* Typography Adjustments for Mobile */
     .heading1 {
-        font-size: 2rem; /* As per prompt */
+        font-size: 2rem; 
     }
     .heading2 {
-        font-size: 2rem; /* Adjusted from 1.5rem for better impact like image */
+        font-size: 2rem; 
     }
     .heading3 {
-        font-size: 1.6rem; /* Adjusted from 1.3rem */
+        font-size: 1.6rem; 
     }
     .paragraph {
         font-size: 1.3rem;
     }
     span.category-tag, .main-nav ul li a, .mini-category {
-        font-size: 1rem; /* Slightly smaller tags on mobile */
+        font-size: 1rem; 
     }
     .ai-article-card .paragraph {
-        font-size: 1.2rem; /* Further reduce AI article paragraph */
+        font-size: 1.2rem; 
     }
 
 
-    /* Header & Mobile Menu */
-    header { /* Override sticky position and background for mobile */
+    header { 
         position: static;
         background-color: transparent;
     }
 
     .header-top {
-        position: relative; /* For menu positioning context if nav was relative to it */
-        /* Ensure space-between is explicitly set for mobile if not inherited or overridden */
+        position: relative; 
         justify-content: space-between; 
     }
-    .menu-toggle { /* Show dedicated hamburger button in header top */
+    .menu-toggle { 
         display: flex; 
-        /* order: -1; Removed: Use natural HTML order */
-        z-index: 1001; /* Above logo if overlapping happens */
+        z-index: 1001; 
     }
-    .menu-toggle span { /* Ensure "Menu" text is visible on mobile */
+    .menu-toggle span { 
         display: inline; 
     }
     .logo {
@@ -136,23 +128,21 @@
         text-align: center;
     }
     .search-bar {
-        /* Keeping search bar as is, can be simplified further if needed */
+        
     }
-    .search-label span { /* Hide "Buscar" text on mobile */
+    .search-label span { 
         display: none;
     }
 
     .main-nav {
-        /* border-top: none; // Already handled by header border */
-        /* position: relative; // Removed, nav-links will be absolute to header */
+        
     }
     
     .main-nav .container {
         height: auto;
-        padding: 0; /* Nav links will be full width */
+        padding: 0; 
     }
     
-    /* Ensure .menu-hamburger-label (the one for checkbox hack without JS) is hidden */
     .menu-hamburger-label {
         display: none !important;
     }
@@ -161,76 +151,73 @@
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 80px; /* Position below the header-top */
+        top: 80px; 
         left: 0;
         background-color: var(--bg-color);
         border-bottom: 1px solid var(--stroke-color);
         max-height: 0;
-        overflow-y: auto; /* Allow scroll if menu is too long */
+        overflow-y: auto; 
         transition: max-height 0.4s ease-in-out;
-        z-index: 999; /* Below header, above content */
+        z-index: 999; 
     }
 
-    .menu-checkbox:checked ~ .nav-links { /* Controlled by JS via header button */
-        max-height: calc(100vh - 80px); /* Full available height below header */
+    .menu-checkbox:checked ~ .nav-links { 
+        max-height: calc(100vh - 80px); 
     }
 
     .nav-links li a {
-        padding: 15px 16px; /* Full width clickable area, more padding */
+        padding: 15px 16px; 
         border-bottom: 1px solid var(--stroke-color);
         height: auto;
         line-height: normal;
-        font-size: 1.5rem; /* Larger font for mobile menu items */
+        font-size: 1.5rem; 
     }
     .nav-links li:last-child a {
         border-bottom: none;
     }
 
-    /* Hero Section on Mobile */
     .hero-grid {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
     .hero-main-news .news-card.large-card img {
-        height: 250px; /* Adjust height for mobile */
+        height: 250px; 
     }
     .hero-secondary-news {
-        grid-template-columns: 1fr; /* 1 column for secondary news */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
     .hero-secondary-news .news-card.small-card img {
-        height: 200px; /* Adjust height for single column display */
-        aspect-ratio: 1.5; /* More rectangular for mobile */
+        height: 200px; 
+        aspect-ratio: 1.5; 
     }
 
-    /* Mais Lidas on Mobile */
     .most-read-grid {
-        grid-template-columns: 1fr; /* 1 column */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
     .most-read-grid .news-card img {
-        height: 200px; /* Adjust height */
+        height: 200px; 
         aspect-ratio: 1.5;
     }
 
-    /* Destaques IA on Mobile */
     .ai-highlights-grid {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
     .ai-articles-column {
         gap: 20px;
     }
     .ai-article-card {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column; 
     }
     .ai-article-card .ai-article-image-wrapper {
-        flex-basis: auto; /* Reset flex basis */
+        flex-basis: auto; 
         width: 100%;
-        height: 200px; /* Fixed height for stacked image */
+        height: 200px; 
     }
     .ai-article-card img {
-        border-radius: 8px 8px 0 0; /* Round top corners only when stacked */
+        border-radius: 8px 8px 0 0; 
         height: 100%;
     }
     .ai-article-card .card-content {
@@ -241,10 +228,9 @@
         gap: 16px;
     }
     .ad-banner {
-        margin-top: 0; /* Gap handled by .ai-sidebar */
+        margin-top: 0; 
     }
     
-    /* Section spacing on Mobile */
     .hero-section,
     .most-read-section,
     .ai-highlights-section {

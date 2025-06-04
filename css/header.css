@@ -8,9 +8,7 @@ header {
     /* No border-bottom needed on the main header element */
 }
 
-.header-container {
-    /* Using .container class for max-width and padding */
-}
+
 
 .header-top {
     height: 80px; /* As per prompt */
@@ -23,8 +21,8 @@ header {
 
 .logo {
     /* Styles in typography.css */
-    flex-grow: 1; /* Allow logo to take available space */
-    text-align: center; /* Center the logo text */
+    flex-grow: 1; 
+    text-align: center; 
 }
 
 .menu-toggle {
@@ -65,9 +63,7 @@ header {
     cursor: pointer;
 }
 
-.search-label span {
-    /* "Buscar" text */
-}
+
 
 .search-icon {
     width: 20px;
