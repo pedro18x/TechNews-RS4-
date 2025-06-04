@@ -1,0 +1,115 @@
+/* css/base.css */
+:root {
+    --brand-color-light: #60A5FA;
+    --brand-color-dark: #1D4ED8;
+    --bg-color: #0F172A;
+    --stroke-color: #1E293B;
+    --text-color-primary: #F1F5F9;
+    --text-color-secondary: #CBD5E1;
+
+    /* Additional colors based on image if needed, e.g. for specific tags */
+    --tag-holograms-bg: var(--brand-color-light);
+    --tag-holograms-text: var(--bg-color);
+    
+    --tag-robotics-bg: var(--brand-color-dark);
+    --tag-robotics-text: var(--text-color-primary);
+
+    --tag-internet-bg: var(--brand-color-dark);
+    --tag-internet-text: var(--text-color-primary);
+
+    --tag-wearables-bg: var(--brand-color-dark);
+    --tag-wearables-text: var(--text-color-primary);
+
+    --tag-vr-bg: var(--brand-color-dark);
+    --tag-vr-text: var(--text-color-primary);
+
+    --tag-vehicles-bg: var(--brand-color-dark);
+    --tag-vehicles-text: var(--text-color-primary);
+
+    --tag-ai-bg: var(--brand-color-light);
+    --tag-ai-text: var(--bg-color);
+
+    /* Mini card specific tags - default to dark blue */
+    --tag-mini-software-bg: var(--brand-color-dark);
+    --tag-mini-software-text: var(--text-color-primary);
+    --tag-mini-vr-bg: var(--brand-color-dark);
+    --tag-mini-vr-text: var(--text-color-primary);
+    --tag-mini-crypto-bg: var(--brand-color-dark);
+    --tag-mini-crypto-text: var(--text-color-primary);
+    --tag-mini-drones-bg: var(--brand-color-dark);
+    --tag-mini-drones-text: var(--text-color-primary);
+    --tag-mini-3dprint-bg: var(--brand-color-dark);
+    --tag-mini-3dprint-text: var(--text-color-primary);
+    --tag-mini-ai-bg: var(--brand-color-dark);
+    --tag-mini-ai-text: var(--text-color-primary);
+    --tag-mini-security-bg: var(--brand-color-dark);
+    --tag-mini-security-text: var(--text-color-primary);
+    --tag-mini-robotics-bg: var(--brand-color-dark);
+    --tag-mini-robotics-text: var(--text-color-primary);
+
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color-secondary);
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.4rem; /* Default paragraph size from prompt */
+    line-height: 160%; /* Default from prompt */
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Specific transitions */
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+    transition: opacity 0.3s ease;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px; /* As per prompt */
+    margin: 0 auto;
+    padding: 0 16px; /* As per prompt */
+}
+
+/* Basic screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+} 

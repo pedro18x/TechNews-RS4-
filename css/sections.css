@@ -1,0 +1,209 @@
+/* css/sections.css */
+
+/* General Section Styling */
+main {
+    flex-grow: 1; /* Ensures footer sticks to bottom */
+    padding-top: 32px; /* Space below sticky header, adjusted from 24px */
+    padding-bottom: 48px; /* Space above footer */
+}
+
+.hero-section,
+.most-read-section,
+.ai-highlights-section {
+    margin-bottom: 48px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section-header .heading2 {
+    /* Typography from typography.css */
+    /* Making section titles slightly smaller than hero card title if needed */
+    /* For now, use global .heading2 */
+}
+
+/* Hero Section */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 and 1/3 as per prompt */
+    gap: 24px; /* Increased gap for visual separation */
+}
+
+.hero-main-news .news-card.large-card {
+    /* Height for the main hero card is determined by its content and aspect ratio of image */
+}
+
+.hero-main-news .news-card.large-card img {
+   aspect-ratio: 1.77; /* Approx 16:9, adjust to match image */
+   height: 450px; /* Adjust height to match visual */
+   object-fit: cover;
+}
+
+.hero-secondary-news {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 grid as per prompt */
+    gap: 24px; /* Increased gap */
+}
+
+.hero-secondary-news .news-card.small-card {
+    /* Height is determined by image aspect ratio and content */
+}
+
+.hero-secondary-news .news-card.small-card img {
+    aspect-ratio: 1; /* Square-ish images in the example */
+    height: 180px; /* Adjust height to match visual, aiming for equal height cards */
+    object-fit: cover;
+}
+
+/* Seção Mais Lidas */
+.most-read-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns as per prompt */
+    gap: 24px; /* Increased gap */
+}
+
+.most-read-grid .news-card {
+    /* Height is determined by image aspect ratio and content */
+}
+
+.most-read-grid .news-card img {
+    aspect-ratio: 1.33; /* Approx 4:3, adjust to match image */
+    height: 220px; /* Adjust height to match visual */
+    object-fit: cover;
+}
+
+/* Seção Destaques IA */
+.ai-highlights-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 and 1/3 as per prompt */
+    gap: 32px; /* Increased gap */
+}
+
+.ai-articles-column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Increased gap between AI articles */
+}
+
+/* AI Article Card - Image left, Text right */
+.ai-article-card {
+    display: flex; /* Override default flex-direction: column from cards.css */
+    flex-direction: row; /* Image left, content right */
+    background-color: var(--stroke-color); /* Ensure bg color if not from common card style */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ai-article-card .ai-article-image-wrapper {
+    flex: 0 0 250px; /* Fixed width for the image container, adjust as needed */
+    /* Or use a percentage: flex: 0 0 40%; */
+    height: auto; /* Or a fixed height if all cards should match */
+    overflow: hidden; /* Ensure image stays within rounded corners if applied */
+}
+
+.ai-article-card img {
+    width: 100%;
+    height: 100%; /* Make image fill the wrapper */
+    object-fit: cover;
+    border-radius: 8px 0 0 8px; /* Round top-left and bottom-left corners */
+}
+
+.ai-article-card .card-content {
+    flex: 1; /* Text content takes remaining space */
+    padding: 20px; /* Adjust padding for AI article text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content if desired */
+}
+
+.ai-article-card .category-tag {
+    /* Styles from cards.css, ensure correct colors are applied via classes */
+    margin-bottom: 10px;
+}
+
+.ai-article-card .heading3 {
+    /* Styles from typography.css */
+    margin-bottom: 8px;
+}
+
+.ai-article-card .paragraph {
+    /* Styles from typography.css */
+    font-size: 1.3rem; /* Slightly smaller for these descriptions */
+    line-height: 1.5;
+}
+
+/* AI Sidebar */
+.ai-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Gap between title, mini-cards list, and ad banner */
+}
+
+.ai-sidebar .sidebar-title {
+    /* heading2 style from typography.css */
+    /* "Viu isso aqui?" */
+    margin-bottom: 0; /* Remove extra margin if section-header has it */
+    text-align: left;
+}
+
+.mini-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Gap between mini-cards as per prompt */
+}
+
+/* Ad Banner (in AI Sidebar) */
+
+.ad-banner {
+    position: relative; /* Remains useful if any other minor styling is added directly to the banner image */
+    border-radius: 8px;
+    overflow: hidden;
+    line-height: 1.3; /* Base line-height, though no text is directly here now */
+    transition: transform 0.3s ease; /* Added for smooth hover effect */
+}
+
+.ad-banner:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.ad-banner img {
+    width: 100%;
+    display: block;
+    object-fit: cover; 
+    max-height: 380px; /* Adjust based on image aspect to prevent too tall banner */
+    border-radius: 8px; /* Ensure image itself is rounded if container is */
+}
+
+.ad-close-button-simulation {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #F1F5F9; /* text-color-primary */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5; /* Ensure it's on top */
+    transition: background-color 0.2s ease;
+}
+
+.ad-close-button-simulation:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Removed all styles for .ad-banner-content, .ad-main-title, .ad-banner-footer, .rocketseat-logo-banner, and .ad-banner-content .btn.ad-btn */
+
+/* Rest of sections.css (styles for other sections) */
+
+/* Rest of sections.css (styles for other sections) */ 

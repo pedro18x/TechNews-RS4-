@@ -1,0 +1,257 @@
+/* css/responsive.css */
+
+/* Tablet (≥ 768px e < 1024px) */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+    .container {
+        padding: 0 24px; /* Slightly more padding for tablet */
+    }
+
+    /* Typography Adjustments for Tablet */
+    .heading1 {
+        font-size: 2.2rem;
+    }
+    .heading2 {
+        /* Keep at 2.4rem or adjust if needed, e.g., 2.2rem */
+        font-size: 2.2rem; 
+    }
+    .heading3 {
+        font-size: 1.7rem; /* Keep at 1.8rem or adjust */
+    }
+
+    /* Header on Tablet */
+    .header-top {
+        /* padding: 0; Container padding handles it */
+    }
+    /* Horizontal scroll for nav if items overflow */
+    .main-nav .nav-links {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+        scrollbar-width: none; /* Firefox */
+    }
+    .main-nav .nav-links::-webkit-scrollbar { /* Chrome, Safari, Opera */
+        display: none;
+    }
+    .main-nav .nav-links li a {
+        white-space: nowrap; /* Prevent wrapping of individual nav items */
+    }
+
+
+    /* Hero Section on Tablet */
+    .hero-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 24px;
+    }
+    .hero-main-news {
+        margin-bottom: 0; /* Gap handles spacing */
+    }
+    .hero-main-news .news-card.large-card img {
+        height: 350px; /* Adjust height for full width */
+    }
+    .hero-secondary-news { /* Remains 2x2 but full width */
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero-secondary-news .news-card.small-card img {
+        height: 160px; /* Adjust if needed */
+    }
+
+    /* Mais Lidas on Tablet */
+    .most-read-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 20px;
+    }
+    .most-read-grid .news-card img {
+        height: 200px; /* Adjust height */
+    }
+
+    /* Destaques IA on Tablet */
+    .ai-highlights-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 24px;
+    }
+    .ai-articles-column {
+        margin-bottom: 0; /* Gap handles spacing */
+        gap: 24px;
+    }
+    .ai-article-card .ai-article-image-wrapper {
+        flex: 0 0 200px; /* Adjust image width for tablet */
+    }
+    .ai-sidebar {
+        /* Order can be changed here if needed, for now stacks below */
+    }
+    .ad-banner {
+        margin-top: 0; /* Gap from .ai-sidebar handles it */
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767.98px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Typography Adjustments for Mobile */
+    .heading1 {
+        font-size: 2rem; /* As per prompt */
+    }
+    .heading2 {
+        font-size: 2rem; /* Adjusted from 1.5rem for better impact like image */
+    }
+    .heading3 {
+        font-size: 1.6rem; /* Adjusted from 1.3rem */
+    }
+    .paragraph {
+        font-size: 1.3rem;
+    }
+    span.category-tag, .main-nav ul li a, .mini-category {
+        font-size: 1rem; /* Slightly smaller tags on mobile */
+    }
+    .ai-article-card .paragraph {
+        font-size: 1.2rem; /* Further reduce AI article paragraph */
+    }
+
+
+    /* Header & Mobile Menu */
+    header { /* Override sticky position and background for mobile */
+        position: static;
+        background-color: transparent;
+    }
+
+    .header-top {
+        position: relative; /* For menu positioning context if nav was relative to it */
+        /* Ensure space-between is explicitly set for mobile if not inherited or overridden */
+        justify-content: space-between; 
+    }
+    .menu-toggle { /* Show dedicated hamburger button in header top */
+        display: flex; 
+        /* order: -1; Removed: Use natural HTML order */
+        z-index: 1001; /* Above logo if overlapping happens */
+    }
+    .menu-toggle span { /* Ensure "Menu" text is visible on mobile */
+        display: inline; 
+    }
+    .logo {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .search-bar {
+        /* Keeping search bar as is, can be simplified further if needed */
+    }
+    .search-label span { /* Hide "Buscar" text on mobile */
+        display: none;
+    }
+
+    .main-nav {
+        /* border-top: none; // Already handled by header border */
+        /* position: relative; // Removed, nav-links will be absolute to header */
+    }
+    
+    .main-nav .container {
+        height: auto;
+        padding: 0; /* Nav links will be full width */
+    }
+    
+    /* Ensure .menu-hamburger-label (the one for checkbox hack without JS) is hidden */
+    .menu-hamburger-label {
+        display: none !important;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Position below the header-top */
+        left: 0;
+        background-color: var(--bg-color);
+        border-bottom: 1px solid var(--stroke-color);
+        max-height: 0;
+        overflow-y: auto; /* Allow scroll if menu is too long */
+        transition: max-height 0.4s ease-in-out;
+        z-index: 999; /* Below header, above content */
+    }
+
+    .menu-checkbox:checked ~ .nav-links { /* Controlled by JS via header button */
+        max-height: calc(100vh - 80px); /* Full available height below header */
+    }
+
+    .nav-links li a {
+        padding: 15px 16px; /* Full width clickable area, more padding */
+        border-bottom: 1px solid var(--stroke-color);
+        height: auto;
+        line-height: normal;
+        font-size: 1.5rem; /* Larger font for mobile menu items */
+    }
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Hero Section on Mobile */
+    .hero-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 20px;
+    }
+    .hero-main-news .news-card.large-card img {
+        height: 250px; /* Adjust height for mobile */
+    }
+    .hero-secondary-news {
+        grid-template-columns: 1fr; /* 1 column for secondary news */
+        gap: 20px;
+    }
+    .hero-secondary-news .news-card.small-card img {
+        height: 200px; /* Adjust height for single column display */
+        aspect-ratio: 1.5; /* More rectangular for mobile */
+    }
+
+    /* Mais Lidas on Mobile */
+    .most-read-grid {
+        grid-template-columns: 1fr; /* 1 column */
+        gap: 20px;
+    }
+    .most-read-grid .news-card img {
+        height: 200px; /* Adjust height */
+        aspect-ratio: 1.5;
+    }
+
+    /* Destaques IA on Mobile */
+    .ai-highlights-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 20px;
+    }
+    .ai-articles-column {
+        gap: 20px;
+    }
+    .ai-article-card {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+    .ai-article-card .ai-article-image-wrapper {
+        flex-basis: auto; /* Reset flex basis */
+        width: 100%;
+        height: 200px; /* Fixed height for stacked image */
+    }
+    .ai-article-card img {
+        border-radius: 8px 8px 0 0; /* Round top corners only when stacked */
+        height: 100%;
+    }
+    .ai-article-card .card-content {
+        padding: 16px;
+    }
+    
+    .mini-cards-list {
+        gap: 16px;
+    }
+    .ad-banner {
+        margin-top: 0; /* Gap handled by .ai-sidebar */
+    }
+    
+    /* Section spacing on Mobile */
+    .hero-section,
+    .most-read-section,
+    .ai-highlights-section {
+        margin-bottom: 32px;
+    }
+    main {
+        padding-top: 24px;
+        padding-bottom: 32px;
+    }
+} 

@@ -1,0 +1,131 @@
+/* css/header.css */
+header {
+    background-color: var(--bg-color); /* Match main page background */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    /* No border-bottom needed on the main header element */
+}
+
+.header-container {
+    /* Using .container class for max-width and padding */
+}
+
+.header-top {
+    height: 80px; /* As per prompt */
+    display: flex;
+    justify-content: space-between; /* This will push menu left, search right */
+    align-items: center;
+    background-color: transparent; /* Will inherit from header or be part of same bg */
+    border-bottom: 1px solid var(--stroke-color); /* Line between header-top and main-nav */
+}
+
+.logo {
+    /* Styles in typography.css */
+    flex-grow: 1; /* Allow logo to take available space */
+    text-align: center; /* Center the logo text */
+}
+
+.menu-toggle {
+    display: flex; /* Make visible on desktop now */
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem; /* For "Menu" text, if shown */
+    font-weight: 600;
+    color: var(--text-color-primary);
+    padding: 8px 0; /* Adjust padding */
+    /* flex-shrink: 0; /* Prevent menu toggle from shrinking if space is tight */
+}
+
+/* Show "Menu" text by default */
+.menu-toggle span {
+    display: inline;
+}
+
+.menu-toggle img {
+    width: 24px;
+    height: 24px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* flex-shrink: 0; /* Prevent search bar from shrinking if space is tight */
+}
+
+.search-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color-primary);
+    cursor: pointer;
+}
+
+.search-label span {
+    /* "Buscar" text */
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hide the actual input, label acts as the button */
+.search-bar input[type="search"] {
+   display: none; /* Visually hidden, but can be focused if needed */
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: transparent; /* Will inherit from header or be part of same bg */
+    border-bottom: none; /* No border needed, content scrolls under sticky header */
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: center; /* Center navigation links */
+    align-items: center;
+    height: 50px;
+}
+
+.menu-checkbox { /* Checkbox for mobile menu toggle */
+    display: none;
+}
+
+/* This label is for the checkbox hack, visually hidden if JS/header button is primary toggle */
+/* Should be explicitly hidden on desktop and shown on mobile via responsive.css */
+.menu-hamburger-label {
+    display: none; /* Hidden on desktop by default */
+    cursor: pointer;
+}
+
+.menu-hamburger-label img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0; /* Padding handles spacing */
+}
+
+.nav-links li a {
+    padding: 0 12px; /* Horizontal padding as per prompt */
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: var(--text-color-secondary);
+    /* font-weight and font-size from typography.css (.main-nav ul li a) */
+    border-bottom: 2px solid transparent; /* For hover/active indication if needed */
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--text-color-primary);
+    background-color: transparent; /* Remove bg color on hover, rely on text color change */
+    /* border-bottom-color: var(--brand-color-light); */ /* Example active/hover state */
+} 
